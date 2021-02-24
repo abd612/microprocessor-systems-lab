@@ -1,0 +1,17 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Documents\Workspaces\Keil Workspace\Lab3-1.uvproj
+Project File Date:  02/21/2017
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling startup_TM4C123.s...
+assembling example3-1.s...
+compiling init.c...
+init.c(3): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1060 RO-data=636 RW-data=0 ZI-data=608  
+".\Lab3-1.axf" - 0 Errors, 1 Warning(s).

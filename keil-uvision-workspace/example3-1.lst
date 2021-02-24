@@ -1,0 +1,59 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 PRESERVE8
+    2 00000000                 THUMB
+    3 00000000         
+    4 00000000                 AREA             |.text|, CODE, READONLY, ALIGN=
+2
+    5 00000000                 ENTRY
+    6 00000000                 EXPORT           main
+    7 00000000         
+    8 00000000         main
+    9 00000000         
+   10 00000000 F241 2534       MOV              R5, #0x1234
+   11 00000004 F241 2334       MOV              R3, #0x1234
+   12 00000008 EB05 0603       ADD              R6, R5, R3
+   13 0000000C         
+   14 0000000C         STOP
+   15 0000000C E7FE            B                STOP
+   16 0000000E                 END
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\exa
+mple3-1.d -o.\example3-1.o -I"C:\Program Files\Keil\ARM\RV31\INC" -I"C:\Program
+ Files\Keil\ARM\CMSIS\Include" -I"C:\Program Files\Keil\ARM\Inc\TI\TM4C123" --p
+redefine="__EVAL SETA 1" --list=.\example3-1.lst example3-1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 4 in file example3-1.s
+   Uses
+      None
+Comment: .text unused
+STOP 0000000C
+
+Symbol: STOP
+   Definitions
+      At line 14 in file example3-1.s
+   Uses
+      At line 15 in file example3-1.s
+Comment: STOP used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 8 in file example3-1.s
+   Uses
+      At line 6 in file example3-1.s
+Comment: main used once
+3 symbols
+335 symbols in table

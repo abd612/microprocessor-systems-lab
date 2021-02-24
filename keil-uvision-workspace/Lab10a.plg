@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Documents\Workspaces\Keil Workspace\Lab10a.uvproj
+Project File Date:  04/25/2017
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling Ex10.c...
+Ex10.c(83): warning:  #1-D: last line of file ends without a newline
+Ex10.c(83): error:  #169: expected a declaration
+".\Lab10a.axf" - 1 Errors, 1 Warning(s).
+Target not created
+Build target 'Target 1'
+compiling Ex10.c...
+Ex10.c(83): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1200 RO-data=16 RW-data=0 ZI-data=352  
+FromELF: creating hex file...
+".\Lab10a.axf" - 0 Errors, 1 Warning(s).
+Load "D:\\Documents\\Workspaces\\Keil Workspace\\Lab10a.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.

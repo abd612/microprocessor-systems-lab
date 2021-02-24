@@ -1,0 +1,62 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Documents\Workspaces\Keil Workspace\Lab7.uvproj
+Project File Date:  05/01/2017
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling Example7-1.c...
+Example7-1.c(34): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=804 RO-data=0 RW-data=0 ZI-data=256  
+FromELF: creating hex file...
+".\Lab7.axf" - 0 Errors, 1 Warning(s).
+Load "D:\\Documents\\Workspaces\\Keil Workspace\\Lab7.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling Task7-1.c...
+Task7-1.c(54): warning:  #1-D: last line of file ends without a newline
+Task7-1.c(54): warning:  #940-D: missing return statement at end of non-void function "__main"
+linking...
+Program Size: Code=868 RO-data=0 RW-data=0 ZI-data=256  
+FromELF: creating hex file...
+".\Lab7.axf" - 0 Errors, 2 Warning(s).
+Load "D:\\Documents\\Workspaces\\Keil Workspace\\Lab7.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'Target 1'
+compiling Task7-1.c...
+Task7-1.c(26): error:  #125: expected a "("
+Task7-1.c(48): warning:  #12-D: parsing restarts here after previous syntax error
+Task7-1.c(48): warning:  #236-D: controlling expression is constant
+Task7-1.c(48): error:  #29: expected an expression
+Task7-1.c(50): warning:  #128-D: loop is not reachable
+Task7-1.c(55): warning:  #940-D: missing return statement at end of non-void function "__main"
+Task7-1.c(14): warning:  #177-D: variable "GPIO_PORTF_PIN1_EN" was declared but never referenced
+Task7-1.c(15): warning:  #177-D: variable "LED_ON" was declared but never referenced
+Task7-1.c(17): warning:  #177-D: variable "value" was declared but never referenced
+Task7-1.c(18): warning:  #177-D: variable "i" was declared but never referenced
+Task7-1.c(56): error:  #169: expected a declaration
+Task7-1.c(57): warning:  #1-D: last line of file ends without a newline
+".\Lab7.axf" - 3 Errors, 9 Warning(s).
+Target not created
+Build target 'Target 1'
+compiling Task7-1.c...
+Task7-1.c(57): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=864 RO-data=0 RW-data=0 ZI-data=256  
+FromELF: creating hex file...
+".\Lab7.axf" - 0 Errors, 1 Warning(s).
+Load "D:\\Documents\\Workspaces\\Keil Workspace\\Lab7.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.

@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Documents\Workspaces\Keil Workspace\Lab10.uvproj
+Project File Date:  04/25/2017
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling Timer0A_Periodic_Interrupt.c...
+timer.h(35): warning:  #1-D: last line of file ends without a newline
+Timer0A_Periodic_Interrupt.c(47): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=1196 RO-data=16 RW-data=0 ZI-data=352  
+FromELF: creating hex file...
+".\Lab10.axf" - 0 Errors, 2 Warning(s).
+Load "D:\\Documents\\Workspaces\\Keil Workspace\\Lab10.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Load "D:\\Documents\\Workspaces\\Keil Workspace\\Lab10.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.

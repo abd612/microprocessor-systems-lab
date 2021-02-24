@@ -1,0 +1,12 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+                       
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\fir
+st_asm.d -o.\first_asm.o -I"D:\DesktopApps\Keil uVision\ARM\RV31\INC" -I"D:\Des
+ktopApps\Keil uVision\ARM\CMSIS\Include" -I"D:\DesktopApps\Keil uVision\ARM\Inc
+\TI\TM4C123" --predefine="__EVAL SETA 1" --list=.\first_asm.lst first_asm.s
+331 symbols in table

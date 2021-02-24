@@ -1,0 +1,131 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 PRESERVE8
+    2 00000000                 THUMB
+    3 00000000         
+    4 00000000                 AREA             myData, DATA, READWRITE
+    5 00000000 00000000 
+                       SUM     DCD              0
+    6 00000004         
+    7 00000004                 AREA             |.text|, CODE, READONLY, AlIGN=
+2
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           __main
+   10 00000000         
+   11 00000000         __main
+   12 00000000         
+   13 00000000 F04F 0001       MOV              R0, #1
+   14 00000004 F04F 010A       MOV              R1, #10
+   15 00000008 F04F 0200       MOV              R2, #0
+   16 0000000C         
+   17 0000000C F7FF FFFE       BL               SUMUP
+   18 00000010         
+   19 00000010 4C05            LDR              R4, =SUM
+   20 00000012 6022            STR              R2, [R4]
+   21 00000014         
+   22 00000014 E008            B                STOP
+   23 00000016         
+   24 00000016         SUMUP   PROC
+   25 00000016         
+   26 00000016         lbegin
+   27 00000016 FB00 F300       MUL              R3, R0, R0
+   28 0000001A 441A            ADD              R2, R3
+   29 0000001C F100 0001       ADD              R0, #1
+   30 00000020 4288            CMP              R0, R1
+   31 00000022 DC00            BGT              lend
+   32 00000024 E7F7            B                lbegin
+   33 00000026         
+   34 00000026         lend
+   35 00000026 4770            BX               LR
+   36 00000028                 ENDP
+   37 00000028         
+   38 00000028         STOP
+   39 00000028                 END
+              00000000 
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\que
+stion1.d -o.\question1.o -I"C:\Program Files\Keil\ARM\RV31\INC" -I"C:\Program F
+iles\Keil\ARM\CMSIS\Include" -I"C:\Program Files\Keil\ARM\Inc\TI\TM4C123" --pre
+define="__EVAL SETA 1" --list=.\question1.lst Question1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+SUM 00000000
+
+Symbol: SUM
+   Definitions
+      At line 5 in file Question1.s
+   Uses
+      At line 19 in file Question1.s
+Comment: SUM used once
+myData 00000000
+
+Symbol: myData
+   Definitions
+      At line 4 in file Question1.s
+   Uses
+      None
+Comment: myData unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 7 in file Question1.s
+   Uses
+      None
+Comment: .text unused
+STOP 00000028
+
+Symbol: STOP
+   Definitions
+      At line 38 in file Question1.s
+   Uses
+      At line 22 in file Question1.s
+Comment: STOP used once
+SUMUP 00000016
+
+Symbol: SUMUP
+   Definitions
+      At line 24 in file Question1.s
+   Uses
+      At line 17 in file Question1.s
+Comment: SUMUP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 11 in file Question1.s
+   Uses
+      At line 9 in file Question1.s
+Comment: __main used once
+lbegin 00000016
+
+Symbol: lbegin
+   Definitions
+      At line 26 in file Question1.s
+   Uses
+      At line 32 in file Question1.s
+Comment: lbegin used once
+lend 00000026
+
+Symbol: lend
+   Definitions
+      At line 34 in file Question1.s
+   Uses
+      At line 31 in file Question1.s
+Comment: lend used once
+6 symbols
+342 symbols in table

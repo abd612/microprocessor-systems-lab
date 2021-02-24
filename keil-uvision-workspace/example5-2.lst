@@ -1,0 +1,141 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 PRESERVE8
+    2 00000000                 THUMB
+    3 00000000         
+    4 00000000                 AREA             myDATA, DATA, READWRITE
+    5 00000000         
+    6 00000000 00 00 00 
+              00 00 00 
+              00 00    Result  SPACE            8
+    7 00000008         
+    8 00000008                 AREA             Program, CODE, READONLY
+    9 00000000         
+   10 00000000                 ENTRY
+   11 00000000                 EXPORT           __main
+   12 00000000         
+   13 00000000         __main
+   14 00000000         
+   15 00000000 480B            LDR              R0, =Value1
+   16 00000002 490C            LDR              R1, =Value2
+   17 00000004         
+   18 00000004 F7FF FFFE       BL               SUM64
+   19 00000008         
+   20 00000008 480B            LDR              R0, =Result
+   21 0000000A 6006            STR              R6, [R0]
+   22 0000000C 6047            STR              R7, [R0, #4]
+   23 0000000E         
+   24 0000000E E007            B                STOP
+   25 00000010         
+   26 00000010         SUM64   PROC
+   27 00000010         
+   28 00000010 6802            LDR              R2, [R0]
+   29 00000012 6843            LDR              R3, [R0, #4]
+   30 00000014         
+   31 00000014 680C            LDR              R4, [R1]
+   32 00000016 684D            LDR              R5, [R1, #4]
+   33 00000018         
+   34 00000018 195F            ADDS             R7, R3, R5
+   35 0000001A EB42 0604       ADC              R6, R2, R4
+   36 0000001E         
+   37 0000001E 4770            BX               LR
+   38 00000020                 ENDP
+   39 00000020         
+   40 00000020         STOP
+   41 00000020         
+   42 00000020 12A2E640 
+              F2100123 Value1  DCD              0x12A2E640, 0xF2100123
+   43 00000028 001019BF 
+              40023F51 Value2  DCD              0x001019BF, 0x40023F51
+   44 00000030         
+   45 00000030                 END
+              00000000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\exa
+mple5-2.d -o.\example5-2.o -I"C:\Program Files\Keil\ARM\RV31\INC" -I"C:\Program
+ Files\Keil\ARM\CMSIS\Include" -I"C:\Program Files\Keil\ARM\Inc\TI\TM4C123" --p
+redefine="__EVAL SETA 1" --list=.\example5-2.lst Example5-2.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Result 00000000
+
+Symbol: Result
+   Definitions
+      At line 6 in file Example5-2.s
+   Uses
+      At line 20 in file Example5-2.s
+Comment: Result used once
+myDATA 00000000
+
+Symbol: myDATA
+   Definitions
+      At line 4 in file Example5-2.s
+   Uses
+      None
+Comment: myDATA unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Program 00000000
+
+Symbol: Program
+   Definitions
+      At line 8 in file Example5-2.s
+   Uses
+      None
+Comment: Program unused
+STOP 00000020
+
+Symbol: STOP
+   Definitions
+      At line 40 in file Example5-2.s
+   Uses
+      At line 24 in file Example5-2.s
+Comment: STOP used once
+SUM64 00000010
+
+Symbol: SUM64
+   Definitions
+      At line 26 in file Example5-2.s
+   Uses
+      At line 18 in file Example5-2.s
+Comment: SUM64 used once
+Value1 00000020
+
+Symbol: Value1
+   Definitions
+      At line 42 in file Example5-2.s
+   Uses
+      At line 15 in file Example5-2.s
+Comment: Value1 used once
+Value2 00000028
+
+Symbol: Value2
+   Definitions
+      At line 43 in file Example5-2.s
+   Uses
+      At line 16 in file Example5-2.s
+Comment: Value2 used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 13 in file Example5-2.s
+   Uses
+      At line 11 in file Example5-2.s
+Comment: __main used once
+6 symbols
+342 symbols in table

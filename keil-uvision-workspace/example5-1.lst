@@ -1,0 +1,122 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 PRESERVE8
+    2 00000000                 THUMB
+    3 00000000         
+    4 00000000                 AREA             MyData, DATA, READWRITE
+    5 00000000         
+    6 00000000 00000000 
+                       SUMP    DCD              0
+    7 00000004         
+    8 00000004                 AREA             |.text|, CODE, READONLY, ALIGN=
+2
+    9 00000000                 ENTRY
+   10 00000000                 EXPORT           __main
+   11 00000000         
+   12 00000000         __main
+   13 00000000         
+   14 00000000 4905            LDR              R1, N
+   15 00000002 F04F 0000       MOV              R0, #0
+   16 00000006         
+   17 00000006 F7FF FFFE       BL               SUMUP
+   18 0000000A         
+   19 0000000A 4B04            LDR              R3, =SUMP
+   20 0000000C 6018            STR              R0, [R3]
+   21 0000000E         
+   22 0000000E E005            B                STOP
+   23 00000010         
+   24 00000010         SUMUP   PROC
+   25 00000010         
+   26 00000010 4408            ADD              R0, R0, R1
+   27 00000012 1E49            SUBS             R1, R1, #1
+   28 00000014 DCFE            BGT              SUMUP
+   29 00000016 4770            BX               LR
+   30 00000018                 ENDP
+   31 00000018         
+   32 00000018 00000005 
+                       N       DCD              5
+   33 0000001C                 ALIGN
+   34 0000001C         
+   35 0000001C         STOP
+   36 0000001C                 END
+              00000000 
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\exa
+mple5-1.d -o.\example5-1.o -I"C:\Program Files\Keil\ARM\RV31\INC" -I"C:\Program
+ Files\Keil\ARM\CMSIS\Include" -I"C:\Program Files\Keil\ARM\Inc\TI\TM4C123" --p
+redefine="__EVAL SETA 1" --list=.\example5-1.lst Example5-1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MyData 00000000
+
+Symbol: MyData
+   Definitions
+      At line 4 in file Example5-1.s
+   Uses
+      None
+Comment: MyData unused
+SUMP 00000000
+
+Symbol: SUMP
+   Definitions
+      At line 6 in file Example5-1.s
+   Uses
+      At line 19 in file Example5-1.s
+Comment: SUMP used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 8 in file Example5-1.s
+   Uses
+      None
+Comment: .text unused
+N 00000018
+
+Symbol: N
+   Definitions
+      At line 32 in file Example5-1.s
+   Uses
+      At line 14 in file Example5-1.s
+Comment: N used once
+STOP 0000001C
+
+Symbol: STOP
+   Definitions
+      At line 35 in file Example5-1.s
+   Uses
+      At line 22 in file Example5-1.s
+Comment: STOP used once
+SUMUP 00000010
+
+Symbol: SUMUP
+   Definitions
+      At line 24 in file Example5-1.s
+   Uses
+      At line 17 in file Example5-1.s
+      At line 28 in file Example5-1.s
+
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 12 in file Example5-1.s
+   Uses
+      At line 10 in file Example5-1.s
+Comment: __main used once
+5 symbols
+341 symbols in table

@@ -1,0 +1,139 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 PRESERVE8
+    2 00000000                 THUMB
+    3 00000000         
+    4 00000000 00000100 
+                       Stack   EQU              0x00000100
+    5 00000000         
+    6 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
+=3
+    7 00000000         StackMem
+                               SPACE            Stack
+    8 00000100         
+    9 00000100                 AREA             RESET, DATA, READONLY
+   10 00000000                 EXPORT           __Vectors
+   11 00000000         
+   12 00000000         __Vectors
+   13 00000000 00000100        DCD              StackMem + Stack
+   14 00000004 00000000        DCD              Reset_Handler
+   15 00000008         
+   16 00000008                 ALIGN
+   17 00000008         
+   18 00000008                 AREA             |.text|, CODE, READONLY, ALIGN=
+2
+   19 00000000                 ENTRY
+   20 00000000                 EXPORT           Reset_Handler
+   21 00000000         
+   22 00000000         Reset_Handler
+   23 00000000         
+   24 00000000 F241 2534       MOV              R5, #0x1234
+   25 00000004 F241 2334       MOV              R3, #0x1234
+   26 00000008 EB05 0603       ADD              R6, R5, R3
+   27 0000000C         
+   28 0000000C         STOP
+   29 0000000C E7FE            B                STOP
+   30 0000000E                 END
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\exa
+mple3-2.d -o.\example3-2.o -I"C:\Program Files\Keil\ARM\RV31\INC" -I"C:\Program
+ Files\Keil\ARM\CMSIS\Include" -I"C:\Program Files\Keil\ARM\Inc\TI\TM4C123" --p
+redefine="__EVAL SETA 1" --list=.\example3-2.lst example3-2.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STACK 00000000
+
+Symbol: STACK
+   Definitions
+      At line 6 in file example3-2.s
+   Uses
+      None
+Comment: STACK unused
+StackMem 00000000
+
+Symbol: StackMem
+   Definitions
+      At line 7 in file example3-2.s
+   Uses
+      At line 13 in file example3-2.s
+Comment: StackMem used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 9 in file example3-2.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 12 in file example3-2.s
+   Uses
+      At line 10 in file example3-2.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 18 in file example3-2.s
+   Uses
+      None
+Comment: .text unused
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 22 in file example3-2.s
+   Uses
+      At line 14 in file example3-2.s
+      At line 20 in file example3-2.s
+
+STOP 0000000C
+
+Symbol: STOP
+   Definitions
+      At line 28 in file example3-2.s
+   Uses
+      At line 29 in file example3-2.s
+Comment: STOP used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+Stack 00000100
+
+Symbol: Stack
+   Definitions
+      At line 4 in file example3-2.s
+   Uses
+      At line 7 in file example3-2.s
+      At line 13 in file example3-2.s
+
+1 symbol
+340 symbols in table

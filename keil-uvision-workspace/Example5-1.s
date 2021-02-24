@@ -1,0 +1,36 @@
+	PRESERVE8
+	THUMB
+	
+	AREA	MyData, DATA, READWRITE
+	
+SUMP DCD	0
+
+	AREA	|.text|, CODE, READONLY, ALIGN=2
+	ENTRY
+	EXPORT	__main
+	
+__main
+
+	LDR	R1, N
+	MOV	R0, #0
+	
+	BL	SUMUP
+	
+	LDR	R3, =SUMP
+	STR	R0, [R3]
+	
+	B	STOP
+	
+SUMUP	PROC
+
+	ADD	 R0, R0, R1
+	SUBS R1, R1, #1
+	BGT	 SUMUP
+	BX	 LR
+	ENDP
+	
+N	DCD	5
+	ALIGN
+	
+STOP
+	END

@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Documents\Workspaces\Keil Workspace\Lab12.uvproj
+Project File Date:  05/02/2017
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling Example10-1.c...
+Example10-1.c(136): warning:  #1-D: last line of file ends without a newline
+linking...
+Program Size: Code=3836 RO-data=32 RW-data=28 ZI-data=356  
+FromELF: creating hex file...
+".\Lab12.axf" - 0 Errors, 1 Warning(s).
+Load "D:\\Documents\\Workspaces\\Keil Workspace\\Lab12.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.

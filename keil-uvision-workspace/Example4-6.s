@@ -1,0 +1,19 @@
+	PRESERVE8
+	THUMB
+
+	AREA	|.text|, CODE, READONLY, ALIGN = 2
+	ENTRY
+	EXPORT	__main
+
+__main
+
+	MOV    R3, #0xD129
+	MOVT   R3, #0xF29A
+
+STOP
+
+	RRX	   R4, R3
+	RRXS   R6, R3
+	
+	B	STOP
+	END

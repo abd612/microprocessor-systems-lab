@@ -1,0 +1,81 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 PRESERVE8
+    2 00000000                 THUMB
+    3 00000000         
+    4 00000000                 AREA             |.text|, CODE, READONLY, AlIGN=
+2
+    5 00000000                 ENTRY
+    6 00000000                 EXPORT           __main
+    7 00000000         
+    8 00000000         __main
+    9 00000000         
+   10 00000000 F04F 0014       MOV              R0, #20
+   11 00000004 F04F 0100       MOV              R1, #0
+   12 00000008         
+   13 00000008 F7FF FFFE       BL               MYSTERY
+   14 0000000C         
+   15 0000000C E007            B                STOP
+   16 0000000E         
+   17 0000000E         MYSTERY PROC
+   18 0000000E         
+   19 0000000E 2800            CMP              R0, #0
+   20 00000010 D005            BEQ              STOP
+   21 00000012         
+   22 00000012 EA4F 0050       LSR              R0, #1
+   23 00000016 F102 0201       ADD              R2, #1
+   24 0000001A F7FF FFFE       BL               MYSTERY
+   25 0000001E         
+   26 0000001E         
+   27 0000001E         STOP
+   28 0000001E                 END
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\que
+stion2.d -o.\question2.o -I"C:\Program Files\Keil\ARM\RV31\INC" -I"C:\Program F
+iles\Keil\ARM\CMSIS\Include" -I"C:\Program Files\Keil\ARM\Inc\TI\TM4C123" --pre
+define="__EVAL SETA 1" --list=.\question2.lst Question2.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 4 in file Question2.s
+   Uses
+      None
+Comment: .text unused
+MYSTERY 0000000E
+
+Symbol: MYSTERY
+   Definitions
+      At line 17 in file Question2.s
+   Uses
+      At line 13 in file Question2.s
+      At line 24 in file Question2.s
+
+STOP 0000001E
+
+Symbol: STOP
+   Definitions
+      At line 27 in file Question2.s
+   Uses
+      At line 15 in file Question2.s
+      At line 20 in file Question2.s
+
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 8 in file Question2.s
+   Uses
+      At line 6 in file Question2.s
+Comment: __main used once
+4 symbols
+336 symbols in table

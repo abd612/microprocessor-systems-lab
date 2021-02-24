@@ -1,0 +1,67 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 PRESERVE8
+    2 00000000                 THUMB
+    3 00000000         
+    4 00000000                 AREA             |.text|, CODE, READONLY, ALIGN 
+= 2
+    5 00000000                 ENTRY
+    6 00000000                 EXPORT           __main
+    7 00000000         
+    8 00000000         __main
+    9 00000000         
+   10 00000000 F04F 070C       MOV              R7, #0xC
+   11 00000004 F46F 7020       MOV              R0, #-0x281
+   12 00000008 F242 52C3       MOV              R2, #0x25C3
+   13 0000000C F645 143C       MOV              R4, #0x593C
+   14 00000010 F2CA 3477       MOVT             R4, #0xA377
+   15 00000014         
+   16 00000014         STOP
+   17 00000014         
+   18 00000014 EA4F 01C0       LSL              R1, R0, #3
+   19 00000018 FA02 F307       LSL              R3, R2, R7
+   20 0000001C EA4F 2584       LSL              R5, R4, #10
+   21 00000020 02A6            LSLS             R6, R4, #10
+   22 00000022         
+   23 00000022 E7F7            B                STOP
+   24 00000024                 END
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\exa
+mple4-4.d -o.\example4-4.o -I"C:\Program Files\Keil\ARM\RV31\INC" -I"C:\Program
+ Files\Keil\ARM\CMSIS\Include" -I"C:\Program Files\Keil\ARM\Inc\TI\TM4C123" --p
+redefine="__EVAL SETA 1" --list=.\example4-4.lst Example4-4.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 4 in file Example4-4.s
+   Uses
+      None
+Comment: .text unused
+STOP 00000014
+
+Symbol: STOP
+   Definitions
+      At line 16 in file Example4-4.s
+   Uses
+      At line 23 in file Example4-4.s
+Comment: STOP used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 8 in file Example4-4.s
+   Uses
+      At line 6 in file Example4-4.s
+Comment: __main used once
+3 symbols
+335 symbols in table

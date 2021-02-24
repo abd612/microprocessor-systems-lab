@@ -1,0 +1,28 @@
+	PRESERVE8
+	THUMB
+
+	AREA	|.text|, CODE, READONLY, AlIGN=2
+	ENTRY
+	EXPORT __main
+	
+__main
+
+	MOV	R0, #20
+	MOV	R1, #0
+	
+	BL	MYSTERY
+	
+	B	STOP
+	
+MYSTERY	PROC
+
+	CMP R0, #0
+	BEQ STOP
+	
+	LSR R0, #1
+	ADD R2, #1
+	BL	MYSTERY
+
+
+STOP
+	END

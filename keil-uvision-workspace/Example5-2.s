@@ -1,0 +1,45 @@
+	PRESERVE8
+	THUMB
+	
+	AREA	myDATA, DATA, READWRITE
+	
+Result SPACE 8
+
+	AREA	Program, CODE, READONLY
+	
+	ENTRY
+	EXPORT	__main
+
+__main
+
+	LDR	R0, =Value1
+	LDR	R1, =Value2
+	
+	BL	SUM64
+	
+	LDR	R0, =Result
+	STR	R6, [R0]
+	STR	R7, [R0, #4]
+	
+	B	STOP
+	
+SUM64	PROC
+
+	LDR	R2, [R0]
+	LDR R3, [R0, #4]
+	
+	LDR R4, [R1]
+	LDR	R5, [R1, #4]
+	
+	ADDS R7, R3, R5
+	ADC	R6, R2, R4
+	
+	BX	LR
+	ENDP
+	
+STOP
+
+Value1	DCD	0x12A2E640, 0xF2100123
+Value2	DCD	0x001019BF, 0x40023F51
+
+	END
